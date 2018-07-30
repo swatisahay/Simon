@@ -3,7 +3,7 @@ export function simon() {
   var color = ["red", "blue", "green", "yellow"];
   var arr = [" "];
   var userInput = [];
-  var delayOutput = setInterval(test, 1000);
+  // var delayOutput = setInterval(test, 1000);
 
 
   function add() {
@@ -19,18 +19,18 @@ export function simon() {
   var i=0;
   var finalOutput = "";
   var output = setInterval(function() {            // setInterval makes it run repeatedly
-      finalOutput= arr[i++];// get the item and increment i to move to the next
+      console.log(arr);
+      finalOutput = arr[i++];// get the item and increment i to move to the next
+      $("#test").text(finalOutput);
       if (i == arr.length) {
-      i = 0;
-      myStopFunction()
+        i = 0;
+      myStopFunction();
       }// reset to first element if you've reached the end
   }, 1000);
   function myStopFunction() {
       clearInterval(output);
   }
 
-return finalOutput;
-
-
+  return finalOutput;
 
 }
